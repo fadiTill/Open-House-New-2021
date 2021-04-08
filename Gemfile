@@ -23,7 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
-
+# gem 'bootstrap', '~> 5.0.0.beta3' getting errors Could not find gem 'bootstrap (~> 5.0.0.beta3)' in any of the gem sources listed in your Gemfile.
+gem 'bootstrap', '~> 5.0.0.beta2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
