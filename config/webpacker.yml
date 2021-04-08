@@ -1,6 +1,8 @@
 # Note: You must restart bin/webpack-dev-server for changes to take effect
 
 # add bundle exec rails webpacker:install to fix 'Webpacker::Manifest::MissingEntryError in Books#index'
+# node need version 12.13.0  to fix yarn error
+# yarn install 
 
 default: &default
   source_path: app/javascript
