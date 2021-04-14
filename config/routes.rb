@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :accounts
-  get 'publicpage/main'
+  # get 'publicpage/main'
 root to: 'publicpage#main'
   resources :guests
   resources :houses
