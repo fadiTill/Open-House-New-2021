@@ -1,33 +1,28 @@
 
-
-
-
-<h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <h2>Sign up</h2>
+  <label for="floatingInput">Email address</label>
+<%= f.email_field :email, autofocus: true,autocomplete: "email", class:"form-control", id: "inputEmail", placeholder:"Email address" %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+  <label for="floatingPassword">Password</label>
+  <% if @minimum_password_length %>
+     <em>(<%= @minimum_password_length %> characters minimum)</em>
+     <% end %><br />
+  <%= f.password_field :password, autocomplete: "current-password", class:"form-control", id: "inputPassword", placeholder:"Password"%>
+  
+  <label for="floatingPassword">Password</label>
+  <%= f.password_field :password, autocomplete: "current-password", class:"form-control", id: "inputPassword", placeholder:"Password"%>
+  
+  <div class="checkbox mb-3">
+  <label>
+    <input type="checkbox" value="remember-me"> Remember me
+  </label>
+</div>
+<button class="w-100 btn btn-lg btn-primary"  type="submit">Sign up</button>
+<p class="mt-5 mb-3 text-muted"></p>
 
 <%= render "devise/shared/links" %>
+<% end %>
+
+
