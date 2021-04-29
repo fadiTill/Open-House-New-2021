@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_04_08_002110) do
     t.string "address"
     t.integer "price"
     t.integer "size"
-    t.string "type"
+    t.string "typehouses"
     t.integer "bedrooms"
     t.integer "bathrooms"
     t.text "comment"
