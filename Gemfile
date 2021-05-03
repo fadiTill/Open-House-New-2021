@@ -25,6 +25,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 # gem 'bootstrap', '~> 5.0.0.beta3' getting errors Could not find gem 'bootstrap (~> 5.0.0.beta3)' in any of the gem sources listed in your Gemfile.
 gem 'bootstrap', '~> 5.0.0.beta2'
+ gem 'carrierwave', '~> 2.0'
+ gem "mini_magick"
+  gem 'fog'
+  gem 'fog-aws'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
