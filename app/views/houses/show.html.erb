@@ -35,5 +35,10 @@
   <%= @house.comment %>
 </p>
 
+<%=   @house.photos.each do |photo| %>
+<%=  image_tag photo, class:"photo" %>
+<%end%>
+
+
 <%= link_to 'Edit', edit_house_path(@house) %> |
 <%= link_to 'Back', houses_path %>
