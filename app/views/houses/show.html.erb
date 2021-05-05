@@ -35,8 +35,8 @@
   <%= @house.comment %>
 </p>
 
-<%=   @house.photos.each do |photo| %>
-<%=  image_tag photo, class:"photo" %>
+
+<%=  image_tag @house.photo, class:"photo" %>
 <%end%>
 
 

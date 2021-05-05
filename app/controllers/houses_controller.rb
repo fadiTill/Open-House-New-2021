@@ -66,8 +66,7 @@ class HousesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def house_params
-      params.require(:house).permit(:address, :price, :size, :typehouses, :bedrooms, :bathrooms, :comment, photos: [] )
+      params.require(:house).permit(:address, :price, :size, :typehouses, :bedrooms, :bathrooms, :comment, photo )
 
     end
 end
-# :photo_cache
