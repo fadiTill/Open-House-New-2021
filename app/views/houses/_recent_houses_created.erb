@@ -1,7 +1,18 @@
 <% @houses.each do |house| %>
-    <div class="photo" >
-    
+    <div class="photo, col-3" >
     <%=  image_tag house.photo, class:"photo" %>
-        
+    <h2><%=  house.address%></h2>
+    <h2><%=  house.price%></h2> 
+    <div class="infos"> </div>
+    <span> <i data-feather="home"></i>
+    <span><%=  house.bedrooms%></span>
+    <span><%=  house.size%></span>
+    <span><%=  house.bathrooms%></span>
+    <span><%=  house.size%></span>
+    <hr class="featurette-divider">
     </div>
     <%end%>
+
+    
+
+    
