@@ -1,6 +1,6 @@
 class HousesController < ApplicationController
   before_action :set_house, only: %i[ show edit update destroy ]
-  before_action :authenticate_account!, only: [:new, :create, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
 
   # GET /houses or /houses.json
   def index
@@ -23,7 +23,7 @@ class HousesController < ApplicationController
   # POST /houses or /houses.json
   def create
     @house = House.new(house_params)
-    @house.account_id = current_account.id
+    @house.user_id = current_user.id
 
     respond_to do |format|
       if @house.save

@@ -12,33 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_05_04_173943) do
 
-  create_table "accounts", force: :cascade do |t|
-    t.string "license", default: "", null: false
-    t.string "first_name", default: "", null: false
-    t.string "last_name", default: "", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "url"
-    t.integer "account_id"
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["account_id"], name: "index_accounts_on_account_id"
-    t.index ["email"], name: "index_accounts_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
-  end
-
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -72,18 +45,45 @@ ActiveRecord::Schema.define(version: 2021_05_04_173943) do
   end
 
   create_table "houses", force: :cascade do |t|
-    t.integer "account_id"
+    t.integer "user_id"
     t.string "address"
-    t.integer "price"
-    t.integer "size"
+    t.string "price"
+    t.string "size"
     t.string "typehouses"
-    t.integer "bedrooms"
-    t.integer "bathrooms"
+    t.string "bedrooms"
+    t.string "bathrooms"
     t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "photo"
-    t.index ["account_id"], name: "index_houses_on_account_id"
+    t.index ["user_id"], name: "index_houses_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "license", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "url"
+    t.integer "user_id"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["user_id"], name: "index_users_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
