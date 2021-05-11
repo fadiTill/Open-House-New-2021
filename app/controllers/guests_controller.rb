@@ -1,5 +1,7 @@
 class GuestsController < ApplicationController
   before_action :set_guest, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
+
 
   # GET /guests or /guests.json
   def index
@@ -22,7 +24,9 @@ class GuestsController < ApplicationController
   # POST /guests or /guests.json
   def create
     @guest = Guest.new(guest_params)
-
+    @guest.user_id = current_user.id
+ 
+      
     respond_to do |format|
       if @guest.save
         format.html { redirect_to @guest, notice: "Guest was successfully created." }
@@ -64,6 +68,6 @@ class GuestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def guest_params
-      params.require(:guest).permit(:name, :address, :phone_number, :email, :comment, house_id)
+      params.require(:guest).permit(:name, :address, :phone_number, :email, :comment)
     end
 end

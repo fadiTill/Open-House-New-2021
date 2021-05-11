@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable, :trackable  and :omniautable 
 
          has_many :houses
+         has_many :guests
 end
