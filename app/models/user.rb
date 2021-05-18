@@ -5,6 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable, :trackable, 
          :omniauthable, omniauth_providers: [:facebook]
 
+         has_one_attached :avatar, dependent: :destroy
+        #  add active storage validations gem to fix attached_type error
+         validates :avatar, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg']
+
          has_many :houses
          has_many :guests
 

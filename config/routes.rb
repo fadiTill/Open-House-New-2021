@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get 'dashboard/houses'
   get 'dashboard/reports'
   devise_for :users, controllers: {omniauth_callbacks: 'omniauth'}
-  # get 'publicpage/main'
+  resources :users, only: [:index, :show, :edit, :update] do
+    member do
+      delete 'delete_image/:image_id', action:'delete_image', as: 'delete_image'
+    end
+  end 
 root to: 'publicpage#main'
   resources :guests
   resources :houses

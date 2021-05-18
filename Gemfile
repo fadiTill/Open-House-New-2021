@@ -32,10 +32,12 @@ gem 'bootstrap', '~> 5.0.0.beta2'
 # gem 'fog-core'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+ gem 'image_processing', '~> 1.2'
+ gem 'aws-sdk-s3', '~> 1.94', '>= 1.94.1', require: false
 gem 'omniauth-facebook'
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'activerecord-session_store', '~> 1.0'
+gem 'active_storage_validations'
 # gem 'rubocop', '~> 1.14', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
