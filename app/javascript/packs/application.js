@@ -3,6 +3,8 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+const { $ } = require("@rails/ujs")
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
@@ -15,3 +17,23 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+$(document).on("turbolinks:load"), () => {
+if ($('.upload-hider-labels').length > 0 ){
+    $('.upload-hider-labels').each(function(){
+        return $(this).closest('.form-group').find('.upload-hider-fields').hide();
+    } );
+}
+ $('form').on('click', '.replace-upload', function(e) {
+var uploadFields, uploadLabels;
+e.preventDefault();
+uploadLabels = $(this).closest('.upload-hider-labels');
+uploadFields = $(this).closest('form-group').find('.upload-hider-fields');
+uploadLabels.hide();
+return uploadFields.show();
+ });
+
+ }
+
+
+

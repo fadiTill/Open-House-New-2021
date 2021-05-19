@@ -1,30 +1,56 @@
 
 
-.new_account {
+.new_user {
   width: 100%;
   max-width: 330px;
   padding: 15px;
   margin: auto;
 }
 
-.new_account .checkbox {
+.new_user .checkbox {
   font-weight: 400;
 }
 
-.new_account .form-floating:focus-within {
+.new_user .form-floating:focus-within {
   z-index: 2;
 }
 
-.new_account input[type="email"] {
+.new_user input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.new_account input[type="password"] {
+.new_user input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
+.avatar{
+  height:100px;
+  width: 100px;
+}
 
+.no-avatar{
+  background: #ccc;
+
+}
+
+.upload-hide-labels{
+  display: block;
+  height: 34px;
+  padding: 6px 12px;
+  width: 100%;
+
+  .replace-upload, .remove-upload{
+    font-size: 11px;
+    text-decoration: underline;
+  }
+
+  .separator-bar{
+    color: #dcdcdc;
+    margin: 0 18px;
+  }
+
+}

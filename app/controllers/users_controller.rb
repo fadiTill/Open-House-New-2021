@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
+    
   end
 
   # GET /users/new
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /users or /users.json
@@ -48,13 +50,26 @@ class UsersController < ApplicationController
   end
 
   # DELETE /users/1 or /users/1.json
-  def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @user.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+  #     format.json { head :no_content }
+  #   end
+  # end
+
+  def delete_image
+    image = ActiveStorage::Attachement.find(params[:image_id])
+    if current_user == image.record 
+             image.purge
+             #(request.referer redirect to the previous page)
+             redirect_back(fallback_location: request.referer)
+    else       
+             redirect_to root_url, notice: "you need to be the owner"
+    end 
+  end 
+    
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -64,6 +79,11 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.fetch(:user, {})
+      # params.fetch(:user, {})
+      params.require(:house).permit(:license, :first_name, :last_name, :email, :password, :Avatar )
+
     end
+
+
 end
+
