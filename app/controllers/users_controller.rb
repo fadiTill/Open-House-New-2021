@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
+    @user = User.find(params[:id])
     
   end
 
@@ -60,6 +61,7 @@ class UsersController < ApplicationController
 
   def delete_image
     image = ActiveStorage::Attachement.find(params[:image_id])
+  
     if current_user == image.record 
              image.purge
              #(request.referer redirect to the previous page)
@@ -80,7 +82,7 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       # params.fetch(:user, {})
-      params.require(:house).permit(:license, :first_name, :last_name, :email, :password, :Avatar )
+      params.require(:house).permit(:license, :first_name, :last_name, :email, :password, :Avatar, :id )
 
     end
 
