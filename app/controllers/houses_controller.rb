@@ -1,6 +1,7 @@
 class HousesController < ApplicationController
   before_action :set_house, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, only: [:new, :create, :destroy]
+  # before_action :set_sidebar, except: [:show]
 
   # GET /houses or /houses.json
   def index
@@ -59,6 +60,10 @@ class HousesController < ApplicationController
   end
 
   private
+
+  # def set_property
+  #     @show_sidebar = true
+  # end
     # Use callbacks to share common setup or constraints between actions.
     def set_house
       @house = House.find(params[:id])
