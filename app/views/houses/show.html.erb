@@ -1,4 +1,8 @@
+
 <p id="notice"><%= notice %></p>
+
+
+<%=  image_tag @house.photo, class:"full-image" %>
 
 <p>
   <strong>Address:</strong>
@@ -35,10 +39,15 @@
   <%= @house.comment %>
 </p>
 
+<div class="col-4">
+Guest Info
+</div >
 
-<%=  image_tag @house.photo, class:"photo" %>
+
+
 
 
 
 <%= link_to 'Edit', edit_house_path(@house) %> 
 <%= link_to 'Back', houses_path %>
+
