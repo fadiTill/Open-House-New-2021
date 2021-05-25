@@ -1,15 +1,15 @@
 
 <p id="notice"><%= notice %></p>
 
-
+<div class="card">
 <%=  image_tag @house.photo, class:"full-image" %>
 
-<p>
+<h3>
   <strong>Address:</strong>
   <%= @house.address %>
-</p>
+</h3>
 
-<p>
+<p class="price">
   <strong>Price:</strong>
   <%= @house.price %>
 </p>
@@ -39,15 +39,18 @@
   <%= @house.comment %>
 </p>
 
-<div class="col-4">
-Guest Info
-</div >
 
 
 
 
 
 
-<%= link_to 'Edit', edit_house_path(@house) %> 
-<%= link_to 'Back', houses_path %>
 
+<button><%= link_to 'Edit', edit_house_path(@house) %></<button>
+
+<!--
+<div>
+ <button><%= link_to 'Back', houses_path %></button>
+</div>
+-->
+</div>
