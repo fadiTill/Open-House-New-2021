@@ -38,6 +38,8 @@ gem 'omniauth-facebook'
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'activerecord-session_store', '~> 1.0'
 gem 'active_storage_validations'
+gem 'font-awesome-sass', '~> 5.15.1'
+
 # gem 'rubocop', '~> 1.14', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
