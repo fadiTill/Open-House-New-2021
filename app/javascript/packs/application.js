@@ -6,11 +6,16 @@
 const { $ } = require("@rails/ujs")
 
 require("@rails/ujs").start()
+
+var jQuery = require("jquery")
+global.$ = global.jQuery = jQuery
+windows.$ = window.jQuery = jQuery
+
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 //yarn add jquery popper.js
-require ("jquery")
+// require("jquery")
 require("./includ/houses");
 
 

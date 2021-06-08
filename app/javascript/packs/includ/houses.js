@@ -1,5 +1,6 @@
-$function{
-    var details = ${"#details"}
-    details.togle();
-    console.log('')
+$(function(){
+    var details = ${"#details"};
+
+    details.toggle();
+    console.log('test');
 });
