@@ -8,8 +8,8 @@
 // });
 
 $(function(){
-    $("#toggleDetails")on.("click", function())
-     var details = ${"#details"};
+    $("#toggleDetails").on("click", function(){
+     var details = $("#details");
 
      console.log('clicked');
    details.toggleClass("open");
@@ -17,4 +17,5 @@ $(function(){
 //     //issue uploading this file 
 //     console.log('test');
   
-// });
+ })
+});
