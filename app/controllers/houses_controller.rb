@@ -8,6 +8,11 @@ class HousesController < ApplicationController
     @houses = House.all
   end
 
+  def search
+    @houses = House.where("address LIKE ?","%"+ params[:q]+ "%")
+  end 
+
+
   # GET /houses/1 or /houses/1.json
   def show
   end
